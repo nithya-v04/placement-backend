@@ -1,0 +1,26 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Build files
+*.class
+*.jar
+*.war
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env 
