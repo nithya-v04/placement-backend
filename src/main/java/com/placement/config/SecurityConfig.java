@@ -41,12 +41,13 @@ public class SecurityConfig {
             .csrf(AbstractHttpConfigurer::disable)
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                    "/api/auth/**",
-                    "/h2-console/**",
-                    "/swagger-ui/**",
-                    "/v3/api-docs/**"
-                ).permitAll()
+            		.requestMatchers(
+            			    "/",
+            			    "/api/auth/**",
+            			    "/h2-console/**",
+            			    "/swagger-ui/**",
+            			    "/v3/api-docs/**"
+            			).permitAll()
                 .requestMatchers("/api/students/**").hasAnyRole("STUDENT", "ADMIN", "COMPANY")
                 .requestMatchers("/api/companies/**").hasAnyRole("COMPANY", "ADMIN", "STUDENT")
                 .requestMatchers("/api/jobs/**").authenticated()
